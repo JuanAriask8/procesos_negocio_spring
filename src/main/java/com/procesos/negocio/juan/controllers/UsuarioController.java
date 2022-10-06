@@ -63,7 +63,7 @@ public class UsuarioController {
     }
     @GetMapping("/usuario/nombre/{nombre}")
     public ResponseEntity listarPorNombres(@PathVariable String nombre) {
-        List<Usuario> usuarios = usuarioRepository.findAllByApellido(nombre);
+        List<Usuario> usuarios = usuarioRepository.findAllByNombre(nombre);
         {
             if (usuarios.isEmpty()) {
                 return ResponseEntity.notFound().build();
